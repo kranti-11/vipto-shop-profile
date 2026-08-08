@@ -3,27 +3,24 @@
 A modern, high-performance Flutter mobile screen built for **Vipto** — an application that helps users discover products available in nearby local shops.
 
 ---
-
-## 🌟 Features & UI Highlights
+ Features & UI Highlights
 
 This project implements a complete, interactive **Shop Profile Screen** designed with Material 3, custom typography, dynamic sliver header, and clean MVVM architecture:
 
-* 🏪 **Shop Profile Header & Banner**: Collapsible `SliverAppBar` with gradient overlays, shop avatar badge, verified badge, and favorite toggle.
-* 🏷️ **Shop Core Details**:
+Shop Profile Header & Banner**: Collapsible `SliverAppBar` with gradient overlays, shop avatar badge, verified badge, and favorite toggle.
+Shop Core Details**:
   * **Shop Name**: *GreenValley Organic & Bakery*
   * **Shop Category**: *Artisanal Bakery & Fresh Grocery*
   * **Rating & Reviews**: *4.8 ★ (184 reviews)*
   * **Shop Address**: *742 Evergreen Terrace, Sector 4, Metro City (0.6 km away)*
   * **About Shop**: Detailed short description highlighting local organic produce & sourdough items.
   * **Contact Number**: *+1 (555) 389-2041* with direct call trigger.
-* ⚡ **Quick Action Bar**: One-tap Call, Directions (Map Route), Message/WhatsApp, and Share links.
-* 🔍 **In-Shop Product Discovery**: Filter products by search query or category tabs (*Bakery*, *Dairy*, *Produce*, *Beverages*).
-* 🛒 **Interactive Shopping Basket**: Add/remove product counter controls with floating real-time cart summary bar.
-* ⭐ **Customer Reviews Section**: Breakdown summary with rating bars and user feedback cards.
+   **Quick Action Bar**: One-tap Call, Directions (Map Route), Message/WhatsApp, and Share links.
+  **In-Shop Product Discovery**: Filter products by search query or category tabs (*Bakery*, *Dairy*, *Produce*, *Beverages*).
+  **Interactive Shopping Basket**: Add/remove product counter controls with floating real-time cart summary bar.
+  **Customer Reviews Section**: Breakdown summary with rating bars and user feedback cards.
 
----
-
-## 🏗️ Architecture & Project Structure
+ Architecture & Project Structure
 
 Follows standard Flutter MVVM (Model-View-ViewModel) architectural layered pattern:
 
@@ -58,9 +55,7 @@ lib/
 └── main.dart                       # App entrypoint
 ```
 
----
-
-## 🧪 Testing & Quality Assurance
+ Testing & Quality Assurance
 
 Static analysis and unit/widget test suites:
 
@@ -71,10 +66,7 @@ To run tests locally:
 ```bash
 flutter test
 ```
-
----
-
-## 🚀 Running the Project
+Running the Project
 
 1. Clone or navigate to the repository directory:
    ```bash
@@ -91,9 +83,7 @@ flutter test
    flutter run
    ```
 
----
-
-## 📦 GitHub Repository Setup
+ GitHub Repository Setup
 
 To push to your public GitHub repository (`vipto-shop-profile`):
 
