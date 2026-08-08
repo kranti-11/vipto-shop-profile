@@ -30,12 +30,18 @@ class ShopProfileViewModel extends ChangeNotifier {
 
   final List<String> categories = ['All Products', 'Bakery', 'Dairy', 'Produce', 'Beverages'];
 
-  Future<void> loadShopProfile(String shopId) async {
+  Future<void> loadShopProfile(String shopId, {bool delay = true}) async {
+    if (_shop != null && !delay) {
+      _isLoading = false;
+      notifyListeners();
+      return;
+    }
+
     _isLoading = true;
     notifyListeners();
 
     try {
-      _shop = await _repository.fetchShopDetails(shopId);
+      _shop = await _repository.fetchShopDetails(shopId, delay: delay);
     } catch (_) {
       // Gracefully handle any error
     } finally {

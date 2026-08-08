@@ -18,7 +18,7 @@ void main() {
     });
 
     test('Loads shop profile details successfully', () async {
-      await viewModel.loadShopProfile('shop_101');
+      await viewModel.loadShopProfile('shop_101', delay: false);
 
       expect(viewModel.isLoading, isFalse);
       expect(viewModel.shop, isNotNull);
@@ -35,7 +35,7 @@ void main() {
     });
 
     test('Cart additions and total price calculations are accurate', () async {
-      await viewModel.loadShopProfile('shop_101');
+      await viewModel.loadShopProfile('shop_101', delay: false);
       final product = viewModel.shop!.featuredProducts.first; // Price: 4.99
 
       expect(viewModel.totalCartCount, equals(0));
@@ -55,7 +55,7 @@ void main() {
     });
 
     test('Product search and category filtering works', () async {
-      await viewModel.loadShopProfile('shop_101');
+      await viewModel.loadShopProfile('shop_101', delay: false);
 
       viewModel.setSearchQuery('Sourdough');
       expect(viewModel.filteredProducts.length, equals(1));
@@ -70,7 +70,7 @@ void main() {
     testWidgets('Renders Shop Profile Screen with required information',
         (WidgetTester tester) async {
       final viewModel = ShopProfileViewModel();
-      await viewModel.loadShopProfile('shop_101');
+      await viewModel.loadShopProfile('shop_101', delay: false);
 
       await tester.pumpWidget(
         MaterialApp(

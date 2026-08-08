@@ -25,7 +25,9 @@ class _ShopProfileScreenState extends State<ShopProfileScreen> {
   void initState() {
     super.initState();
     _viewModel = widget.viewModel ?? ShopProfileViewModel();
-    _viewModel.loadShopProfile('shop_101');
+    if (_viewModel.shop == null) {
+      _viewModel.loadShopProfile('shop_101');
+    }
   }
 
   @override

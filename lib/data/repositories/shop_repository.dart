@@ -4,9 +4,10 @@ import 'package:vipto_shop_profile/data/models/shop_model.dart';
 
 /// Repository supplying local shop profile data
 class ShopRepository {
-  Future<ShopModel> fetchShopDetails(String shopId) async {
-    // Simulate brief network latency for realistic state management
-    await Future.delayed(const Duration(milliseconds: 300));
+  Future<ShopModel> fetchShopDetails(String shopId, {bool delay = true}) async {
+    if (delay) {
+      await Future.delayed(const Duration(milliseconds: 100));
+    }
 
     return const ShopModel(
       id: 'shop_101',
