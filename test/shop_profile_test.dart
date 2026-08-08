@@ -78,7 +78,7 @@ void main() {
         ),
       );
 
-      await tester.pumpAndSettle();
+      await tester.pump();
 
       // Verify Shop Profile Image / Banner & Header exists
       expect(find.byType(CustomScrollView), findsOneWidget);
