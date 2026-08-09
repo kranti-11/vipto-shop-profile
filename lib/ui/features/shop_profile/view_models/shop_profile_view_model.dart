@@ -3,7 +3,7 @@ import 'package:vipto_shop_profile/data/models/product_model.dart';
 import 'package:vipto_shop_profile/data/models/shop_model.dart';
 import 'package:vipto_shop_profile/data/repositories/shop_repository.dart';
 
-/// ViewModel managing state and user actions for Shop Profile Screen
+/// ViewModel managing state and user actions for Kirana Shop Profile Screen
 class ShopProfileViewModel extends ChangeNotifier {
   ShopProfileViewModel({ShopRepository? repository})
       : _repository = repository ?? ShopRepository();
@@ -28,7 +28,15 @@ class ShopProfileViewModel extends ChangeNotifier {
   final Map<String, int> _cartQuantities = {};
   Map<String, int> get cartQuantities => Map.unmodifiable(_cartQuantities);
 
-  final List<String> categories = ['All Products', 'Bakery', 'Dairy', 'Produce', 'Beverages'];
+  final List<String> categories = [
+    'All Products',
+    'Atta & Flour',
+    'Spices & Salt',
+    'Oils & Ghee',
+    'Dairy',
+    'Pulses & Dals',
+    'Vegetables'
+  ];
 
   Future<void> loadShopProfile(String shopId, {bool delay = true}) async {
     if (_shop != null && !delay) {

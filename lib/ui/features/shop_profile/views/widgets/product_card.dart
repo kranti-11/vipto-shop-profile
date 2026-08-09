@@ -3,7 +3,7 @@ import 'package:vipto_shop_profile/core/constants/app_colors.dart';
 import 'package:vipto_shop_profile/data/models/product_model.dart';
 import 'package:vipto_shop_profile/ui/features/shop_profile/view_models/shop_profile_view_model.dart';
 
-/// Card displaying local product item with stock badge and add-to-cart counter
+/// Card displaying Indian Kirana product item with stock badge and add-to-cart counter
 class ProductCardWidget extends StatelessWidget {
   const ProductCardWidget({
     super.key,
@@ -37,7 +37,7 @@ class ProductCardWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Image Header with Discount Badge
+          // Image Header with Discount & Organic Badge
           Expanded(
             child: Stack(
               fit: StackFit.expand,
@@ -83,15 +83,30 @@ class ProductCardWidget extends StatelessWidget {
                     top: 8,
                     right: 8,
                     child: Container(
-                      padding: const EdgeInsets.all(4),
-                      decoration: const BoxDecoration(
-                        color: Colors.white,
-                        shape: BoxShape.circle,
+                      padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                      decoration: BoxDecoration(
+                        color: AppColors.statusOpenBg,
+                        borderRadius: BorderRadius.circular(6),
+                        border: Border.all(color: AppColors.statusOpen, width: 0.5),
                       ),
-                      child: const Icon(
-                        Icons.eco_rounded,
-                        size: 14,
-                        color: AppColors.primary,
+                      child: const Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Icon(
+                            Icons.eco_rounded,
+                            size: 10,
+                            color: AppColors.statusOpen,
+                          ),
+                          SizedBox(width: 2),
+                          Text(
+                            'Fresh',
+                            style: TextStyle(
+                              fontSize: 9,
+                              fontWeight: FontWeight.bold,
+                              color: AppColors.statusOpen,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ),
@@ -99,7 +114,7 @@ class ProductCardWidget extends StatelessWidget {
             ),
           ),
 
-          // Product Info & Price
+          // Product Info & Price in Rupee (₹)
           Padding(
             padding: const EdgeInsets.all(10.0),
             child: Column(
@@ -133,7 +148,7 @@ class ProductCardWidget extends StatelessWidget {
                       children: [
                         if (product.hasDiscount)
                           Text(
-                            '\$${product.originalPrice!.toStringAsFixed(2)}',
+                            '₹${product.originalPrice!.toInt()}',
                             style: const TextStyle(
                               fontSize: 11,
                               decoration: TextDecoration.lineThrough,
@@ -141,7 +156,7 @@ class ProductCardWidget extends StatelessWidget {
                             ),
                           ),
                         Text(
-                          '\$${product.price.toStringAsFixed(2)}',
+                          '₹${product.price.toInt()}',
                           style: const TextStyle(
                             fontSize: 15,
                             fontWeight: FontWeight.w800,

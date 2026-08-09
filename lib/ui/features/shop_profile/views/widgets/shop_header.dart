@@ -3,7 +3,7 @@ import 'package:vipto_shop_profile/core/constants/app_colors.dart';
 import 'package:vipto_shop_profile/data/models/shop_model.dart';
 import 'package:vipto_shop_profile/ui/features/shop_profile/view_models/shop_profile_view_model.dart';
 
-/// Collapsible Header Banner with gradient overlay, shop avatar badge, and action buttons
+/// Collapsible Header Banner with Kirana storefront imagery, avatar badge, and action buttons
 class ShopHeaderWidget extends StatelessWidget {
   const ShopHeaderWidget({
     super.key,
@@ -27,13 +27,13 @@ class ShopHeaderWidget extends StatelessWidget {
       leading: Padding(
         padding: const EdgeInsets.all(8.0),
         child: CircleAvatar(
-          backgroundColor: Colors.black.withValues(alpha: 0.35),
+          backgroundColor: Colors.black.withValues(alpha: 0.4),
           child: IconButton(
             icon: const Icon(Icons.arrow_back_rounded, color: Colors.white, size: 20),
             onPressed: () {
               ScaffoldMessenger.of(context).showSnackBar(
                 const SnackBar(
-                  content: Text('Vipto local shop discovery navigation'),
+                  content: Text('Vipto Kirana Discovery navigation'),
                   duration: Duration(seconds: 1),
                 ),
               );
@@ -45,7 +45,7 @@ class ShopHeaderWidget extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(right: 8.0),
           child: CircleAvatar(
-            backgroundColor: Colors.black.withValues(alpha: 0.35),
+            backgroundColor: Colors.black.withValues(alpha: 0.4),
             child: IconButton(
               icon: Icon(
                 viewModel.isFavorite ? Icons.favorite_rounded : Icons.favorite_border_rounded,
@@ -59,7 +59,7 @@ class ShopHeaderWidget extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(right: 12.0),
           child: CircleAvatar(
-            backgroundColor: Colors.black.withValues(alpha: 0.35),
+            backgroundColor: Colors.black.withValues(alpha: 0.4),
             child: IconButton(
               icon: const Icon(Icons.share_rounded, color: Colors.white, size: 20),
               onPressed: () {
@@ -78,7 +78,7 @@ class ShopHeaderWidget extends StatelessWidget {
         background: Stack(
           fit: StackFit.expand,
           children: [
-            // Background Shop Image
+            // Background Kirana Shop Image
             if (_isTest)
               Container(
                 color: AppColors.primaryDark,
@@ -103,7 +103,7 @@ class ShopHeaderWidget extends StatelessWidget {
                   colors: [
                     Colors.black.withValues(alpha: 0.4),
                     Colors.transparent,
-                    Colors.black.withValues(alpha: 0.7),
+                    Colors.black.withValues(alpha: 0.75),
                   ],
                 ),
               ),

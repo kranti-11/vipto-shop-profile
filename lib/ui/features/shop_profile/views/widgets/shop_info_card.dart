@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:vipto_shop_profile/core/constants/app_colors.dart';
 import 'package:vipto_shop_profile/data/models/shop_model.dart';
 
-/// Card component presenting all core required Shop Profile details
+/// Card component presenting authentic Indian Kirana Shop Profile details
 class ShopInfoCardWidget extends StatelessWidget {
   const ShopInfoCardWidget({
     super.key,
@@ -26,7 +26,7 @@ class ShopInfoCardWidget extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Shop Name & Verified Badge
+            // Shop Name & Verified Local Badge
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -52,10 +52,10 @@ class ShopInfoCardWidget extends StatelessWidget {
                     child: const Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Icon(Icons.verified_rounded, size: 14, color: AppColors.primaryDark),
+                        Icon(Icons.verified_rounded, size: 14, color: AppColors.primary),
                         SizedBox(width: 4),
                         Text(
-                          'Verified',
+                          'Verified Kirana',
                           style: TextStyle(
                             fontSize: 11,
                             fontWeight: FontWeight.bold,
@@ -69,43 +69,45 @@ class ShopInfoCardWidget extends StatelessWidget {
             ),
             const SizedBox(height: 6),
 
-            // Shop Category
+            // Shop Category Line
             Row(
               children: [
-                const Icon(Icons.category_outlined, size: 16, color: AppColors.primary),
+                const Icon(Icons.storefront_rounded, size: 16, color: AppColors.primary),
                 const SizedBox(width: 6),
-                Text(
-                  shop.category,
-                  style: const TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w600,
-                    color: AppColors.primaryDark,
+                Expanded(
+                  child: Text(
+                    shop.category,
+                    style: const TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w600,
+                      color: AppColors.primaryDark,
+                    ),
                   ),
                 ),
               ],
             ),
             const SizedBox(height: 12),
 
-            // Rating & Distance Row
+            // Rating & Distance Row with marigold/yellow rating badge (#FFF3CD / #B8860B)
             Row(
               children: [
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                   decoration: BoxDecoration(
-                    color: AppColors.secondary.withValues(alpha: 0.15),
+                    color: AppColors.ratingBg,
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      const Icon(Icons.star_rounded, size: 16, color: AppColors.secondary),
+                      const Icon(Icons.star_rounded, size: 16, color: AppColors.ratingText),
                       const SizedBox(width: 4),
                       Text(
                         '${shop.rating}',
                         style: const TextStyle(
                           fontSize: 13,
                           fontWeight: FontWeight.bold,
-                          color: AppColors.textPrimary,
+                          color: AppColors.ratingText,
                         ),
                       ),
                       const SizedBox(width: 4),
@@ -113,7 +115,7 @@ class ShopInfoCardWidget extends StatelessWidget {
                         '(${shop.totalReviews} reviews)',
                         style: const TextStyle(
                           fontSize: 12,
-                          color: AppColors.textSecondary,
+                          color: AppColors.ratingText,
                         ),
                       ),
                     ],
@@ -148,11 +150,11 @@ class ShopInfoCardWidget extends StatelessWidget {
             const Divider(color: AppColors.divider, height: 1),
             const SizedBox(height: 16),
 
-            // Shop Address
+            // Shop Address in Indian Format
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Icon(Icons.location_on_outlined, size: 18, color: AppColors.textMuted),
+                const Icon(Icons.location_on_outlined, size: 18, color: AppColors.primary),
                 const SizedBox(width: 8),
                 Expanded(
                   child: Text(
@@ -168,7 +170,7 @@ class ShopInfoCardWidget extends StatelessWidget {
             ),
             const SizedBox(height: 12),
 
-            // Contact Number
+            // Contact Number in Indian format (+91 98XXX XXXXX)
             InkWell(
               onTap: () {
                 ScaffoldMessenger.of(context).showSnackBar(
@@ -195,7 +197,7 @@ class ShopInfoCardWidget extends StatelessWidget {
                     ),
                     const Spacer(),
                     const Text(
-                      'Call Now',
+                      'Call Store',
                       style: TextStyle(
                         fontSize: 12,
                         fontWeight: FontWeight.w600,
@@ -210,7 +212,7 @@ class ShopInfoCardWidget extends StatelessWidget {
             ),
             const SizedBox(height: 16),
 
-            // About Shop (Short Description)
+            // About Shop (Description)
             const Text(
               'About Shop',
               style: TextStyle(

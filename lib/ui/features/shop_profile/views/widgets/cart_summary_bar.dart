@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:vipto_shop_profile/core/constants/app_colors.dart';
 import 'package:vipto_shop_profile/ui/features/shop_profile/view_models/shop_profile_view_model.dart';
 
-/// Floating bottom cart bar displaying total selected items and price
+/// Floating bottom cart bar displaying total selected Kirana items and price in Rupee (₹)
 class CartSummaryBarWidget extends StatelessWidget {
   const CartSummaryBarWidget({
     super.key,
@@ -53,11 +53,11 @@ class CartSummaryBarWidget extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 const Text(
-                  'Subtotal',
+                  'Total Amount',
                   style: TextStyle(fontSize: 11, color: Colors.white70),
                 ),
                 Text(
-                  '\$${viewModel.totalCartPrice.toStringAsFixed(2)}',
+                  '₹${viewModel.totalCartPrice.toInt()}',
                   style: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
@@ -72,7 +72,7 @@ class CartSummaryBarWidget extends StatelessWidget {
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
                     content: Text(
-                      'Proceeding to local shop pickup checkout (${viewModel.totalCartCount} items)',
+                      'Proceeding to Kirana store order (${viewModel.totalCartCount} items - ₹${viewModel.totalCartPrice.toInt()})',
                     ),
                     backgroundColor: AppColors.primary,
                   ),
