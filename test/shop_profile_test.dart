@@ -36,30 +36,30 @@ void main() {
 
     test('Cart additions and total price calculations are accurate', () async {
       await viewModel.loadShopProfile('kirana_101', delay: false);
-      final product = viewModel.shop!.featuredProducts.first; // Price: ₹245
+      final product = viewModel.shop!.featuredProducts.first; // Price: ₹65 (Yellow Moong Dal)
 
       expect(viewModel.totalCartCount, equals(0));
       expect(viewModel.totalCartPrice, equals(0.0));
 
       viewModel.addToCart(product);
       expect(viewModel.totalCartCount, equals(1));
-      expect(viewModel.totalCartPrice, equals(245.0));
+      expect(viewModel.totalCartPrice, equals(65.0));
 
       viewModel.addToCart(product);
       expect(viewModel.totalCartCount, equals(2));
-      expect(viewModel.totalCartPrice, equals(490.0));
+      expect(viewModel.totalCartPrice, equals(130.0));
 
       viewModel.removeFromCart(product);
       expect(viewModel.totalCartCount, equals(1));
-      expect(viewModel.totalCartPrice, equals(245.0));
+      expect(viewModel.totalCartPrice, equals(65.0));
     });
 
     test('Product search and category filtering works', () async {
       await viewModel.loadShopProfile('kirana_101', delay: false);
 
-      viewModel.setSearchQuery('Atta');
+      viewModel.setSearchQuery('Moong');
       expect(viewModel.filteredProducts.length, equals(1));
-      expect(viewModel.filteredProducts.first.name, contains('Atta'));
+      expect(viewModel.filteredProducts.first.name, contains('Moong'));
 
       viewModel.setSearchQuery('');
       expect(viewModel.filteredProducts.length, equals(6));
@@ -88,7 +88,7 @@ void main() {
       expect(find.text('Grocery, Provisions & Fresh Vegetables'), findsOneWidget); // Shop Category
       expect(find.text('4.9'), findsOneWidget); // Rating
       expect(find.textContaining('Laxmi Complex, MG Road'), findsOneWidget); // Address
-      expect(find.textContaining('A neighborhood kirana store offering daily essentials'), findsOneWidget); // About
+      expect(find.textContaining('medium-sized neighborhood kirana store'), findsOneWidget); // About
       expect(find.text('+91 98201 45892'), findsOneWidget); // Contact Number
     });
   });
