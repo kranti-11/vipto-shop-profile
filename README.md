@@ -2,9 +2,7 @@
 
 A modern, high-performance Flutter mobile screen built for **Vipto** — an application that helps users discover products available in nearby Indian local neighborhood shops ("Kirana stores").
 
----
-
-## 🇮🇳 Shop Identity & Core Information
+Shop Identity & Core Information
 
 - **Shop Name**: **Sri Ganesh Kirana & Provision Store**
 - **Shop Category**: **Grocery, Provisions & Fresh Vegetables**
@@ -14,9 +12,7 @@ A modern, high-performance Flutter mobile screen built for **Vipto** — an appl
 - **Operating Hours**: **8:00 AM – 9:30 PM**
 - **About Shop**: *"A neighborhood kirana store offering daily essentials — rice, wheat flour, moong dal, cooking oil, spices, packaged snacks, fresh milk, and farm vegetables — priced fairly for the local community."*
 
----
-
-## 🛍️ 10-Item Product Catalog (₹ Indian Rupee Pricing)
+10-Item Product Catalog (₹ Indian Rupee Pricing)
 
 All products feature dedicated local asset images embedded in `assets/images/` for instant, offline, CORS-free rendering:
 
@@ -31,9 +27,7 @@ All products feature dedicated local asset images embedded in `assets/images/` f
 9. **Nivea Nourishing Body Milk Lotion** — **₹399** *(400 ml bottle)*
 10. **Surf Excel Matic Liquid Detergent** — **₹200** *(1 Liter bottle)*
 
----
-
-## 🎨 Color Palette & Design System
+ Color Palette & Design System
 
 - **Primary Green**: `#2E7D32` *(Deep Forest Kirana Green)*
 - **Accent Marigold**: `#F9A825` *(Festive Yellow)*
@@ -42,9 +36,7 @@ All products feature dedicated local asset images embedded in `assets/images/` f
 - **"Open Now" Badge**: `#E6F4EA` / `#1E7B34`
 - **Rating Badge**: `#FFF3CD` / `#B8860B`
 
----
-
-## 📱 Features & UI Highlights
+ Features & UI Highlights
 
 - **Dynamic Sliver Header**: Collapsible `SliverAppBar` with gradient overlays, store avatar badge, verified badge, and favorite toggle.
 - **Quick Action Bar**: One-tap Call, Directions, Message/WhatsApp, and Share links.
@@ -52,9 +44,7 @@ All products feature dedicated local asset images embedded in `assets/images/` f
 - **Interactive Shopping Basket**: Add/remove product counter controls with real-time floating cart summary bar.
 - **Customer Reviews Section**: Star distribution breakdown and authentic user feedback cards.
 
----
-
-## 🏗️ Architecture & Project Structure
+ Architecture & Project Structure
 
 Follows standard Flutter MVVM (Model-View-ViewModel) architectural layered pattern:
 
@@ -88,10 +78,7 @@ lib/
 │                   └── cart_summary_bar.dart    # Floating checkout summary bar
 └── main.dart                       # App entrypoint
 ```
-
----
-
-## 🧪 Testing & Quality Assurance
+Testing & Quality Assurance
 
 - **Static Analysis**: `flutter analyze` (**0 lints, 0 warnings, 0 errors**)
 - **Unit & Widget Tests**: `flutter test` (**6/6 tests passed**)
@@ -101,9 +88,7 @@ To run tests locally:
 flutter test
 ```
 
----
-
-## 🚀 Running the Project
+ Running the Project
 
 1. Clone the repository:
    ```bash
@@ -120,8 +105,6 @@ flutter test
    ```bash
    flutter run -d chrome
    ```
-
----
 
 ## 🔗 GitHub Repository
 
