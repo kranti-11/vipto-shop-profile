@@ -1,4 +1,4 @@
-# Vipto - Shop Profile Screen (Flutter)
+Vipto - Shop Profile Screen (Flutter)
 
 A modern, high-performance Flutter mobile screen built for **Vipto** — an application that helps users discover products available in nearby local shops.
 
