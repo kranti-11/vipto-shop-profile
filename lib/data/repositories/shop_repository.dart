@@ -2,7 +2,7 @@ import 'package:vipto_shop_profile/data/models/product_model.dart';
 import 'package:vipto_shop_profile/data/models/review_model.dart';
 import 'package:vipto_shop_profile/data/models/shop_model.dart';
 
-/// Repository supplying authentic Indian Kirana Store details and local image assets
+/// Repository supplying authentic Indian Kirana Store details and user-provided product images & prices
 class ShopRepository {
   Future<ShopModel> fetchShopDetails(String shopId, {bool delay = true}) async {
     if (delay) {
@@ -18,7 +18,7 @@ class ShopRepository {
       address: 'Shop No. 4, Laxmi Complex, MG Road, Andheri West, Mumbai, Maharashtra 400058',
       distance: '0.4 km away',
       aboutDescription:
-          'A medium-sized neighborhood kirana store offering daily essentials — rice, wheat flour, moong dal, cooking oil, spices, packaged snacks, fresh milk, and farm vegetables — priced fairly for the local community.',
+          'A neighborhood kirana store offering daily essentials — rice, wheat flour, moong dal, cooking oil, spices, packaged snacks, fresh milk, and farm vegetables — priced fairly for the local community.',
       contactNumber: '+91 98201 45892',
       email: 'contact@sriganeshkirana.in',
       profileImageUrl: 'assets/images/store_banner.jpg',
@@ -31,9 +31,9 @@ class ShopRepository {
           id: 'item_1',
           name: 'Yellow Moong Dal',
           category: 'Pulses & Dals',
-          price: 65.0,
-          originalPrice: 75.0,
-          unit: '500g pack',
+          price: 150.0,
+          originalPrice: 165.0,
+          unit: '1 kg pack',
           imageUrl: 'assets/images/moong_dal.jpg',
           rating: 4.9,
           stockCount: 30,
@@ -44,8 +44,8 @@ class ShopRepository {
           id: 'item_2',
           name: 'Aashirvaad Whole Wheat Atta',
           category: 'Atta & Flour',
-          price: 245.0,
-          originalPrice: 270.0,
+          price: 315.0,
+          originalPrice: 345.0,
           unit: '5 kg pack',
           imageUrl: 'assets/images/atta.jpg',
           rating: 4.9,
@@ -55,10 +55,22 @@ class ShopRepository {
         ),
         ProductModel(
           id: 'item_3',
+          name: 'Amul Taaza Toned Milk',
+          category: 'Dairy',
+          price: 70.0,
+          unit: '1 Liter pouch',
+          imageUrl: 'assets/images/milk.jpg',
+          rating: 5.0,
+          stockCount: 40,
+          description: 'Fresh pasteurized toned milk delivered daily every morning.',
+          isOrganic: true,
+        ),
+        ProductModel(
+          id: 'item_4',
           name: 'Fortune Refined Sunflower Oil',
           category: 'Oils & Ghee',
-          price: 165.0,
-          originalPrice: 180.0,
+          price: 170.0,
+          originalPrice: 185.0,
           unit: '1 Liter pouch',
           imageUrl: 'assets/images/oil.jpg',
           rating: 4.8,
@@ -67,22 +79,10 @@ class ShopRepository {
           isOrganic: false,
         ),
         ProductModel(
-          id: 'item_4',
-          name: 'Amul Taaza Toned Milk',
-          category: 'Dairy',
-          price: 28.0,
-          unit: '500 ml pouch',
-          imageUrl: 'assets/images/milk.jpg',
-          rating: 5.0,
-          stockCount: 40,
-          description: 'Fresh pasteurized toned milk delivered daily every morning.',
-          isOrganic: true,
-        ),
-        ProductModel(
           id: 'item_5',
           name: 'Tata Vacuum Evaporated Salt',
           category: 'Spices & Salt',
-          price: 28.0,
+          price: 30.0,
           unit: '1 kg pack',
           imageUrl: 'assets/images/salt.jpg',
           rating: 4.9,
@@ -94,7 +94,7 @@ class ShopRepository {
           id: 'item_6',
           name: 'Farm Fresh Red Tomatoes',
           category: 'Vegetables',
-          price: 35.0,
+          price: 50.0,
           unit: '1 kg',
           imageUrl: 'assets/images/tomatoes.jpg',
           rating: 4.7,
