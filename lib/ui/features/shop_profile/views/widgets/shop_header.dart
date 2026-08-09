@@ -17,6 +17,22 @@ class ShopHeaderWidget extends StatelessWidget {
   bool get _isTest =>
       WidgetsBinding.instance.runtimeType.toString().contains('TestWidgets');
 
+  Widget _buildImage(String path, {required BoxFit fit, required Widget fallback}) {
+    if (_isTest) return fallback;
+    if (path.startsWith('assets/')) {
+      return Image.asset(
+        path,
+        fit: fit,
+        errorBuilder: (context, error, stackTrace) => fallback,
+      );
+    }
+    return Image.network(
+      path,
+      fit: fit,
+      errorBuilder: (context, error, stackTrace) => fallback,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
@@ -79,20 +95,14 @@ class ShopHeaderWidget extends StatelessWidget {
           fit: StackFit.expand,
           children: [
             // Background Kirana Shop Image
-            if (_isTest)
-              Container(
+            _buildImage(
+              shop.profileImageUrl,
+              fit: BoxFit.cover,
+              fallback: Container(
                 color: AppColors.primaryDark,
                 child: const Icon(Icons.storefront_rounded, size: 80, color: Colors.white54),
-              )
-            else
-              Image.network(
-                shop.profileImageUrl,
-                fit: BoxFit.cover,
-                errorBuilder: (context, error, stackTrace) => Container(
-                  color: AppColors.primaryDark,
-                  child: const Icon(Icons.storefront_rounded, size: 80, color: Colors.white54),
-                ),
               ),
+            ),
 
             // Soft Gradient Overlay
             Container(
@@ -130,19 +140,14 @@ class ShopHeaderWidget extends StatelessWidget {
                       ],
                     ),
                     child: ClipOval(
-                      child: _isTest
-                          ? Container(
-                              color: AppColors.primary,
-                              child: const Icon(Icons.store_rounded, color: Colors.white, size: 36),
-                            )
-                          : Image.network(
-                              shop.logoImageUrl,
-                              fit: BoxFit.cover,
-                              errorBuilder: (context, error, stackTrace) => Container(
-                                color: AppColors.primary,
-                                child: const Icon(Icons.store_rounded, color: Colors.white, size: 36),
-                              ),
-                            ),
+                      child: _buildImage(
+                        shop.logoImageUrl,
+                        fit: BoxFit.cover,
+                        fallback: Container(
+                          color: AppColors.primary,
+                          child: const Icon(Icons.store_rounded, color: Colors.white, size: 36),
+                        ),
+                      ),
                     ),
                   ),
                   const SizedBox(width: 12),

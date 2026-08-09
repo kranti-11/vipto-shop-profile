@@ -17,6 +17,22 @@ class ProductCardWidget extends StatelessWidget {
   bool get _isTest =>
       WidgetsBinding.instance.runtimeType.toString().contains('TestWidgets');
 
+  Widget _buildImage(String path, {required BoxFit fit, required Widget fallback}) {
+    if (_isTest) return fallback;
+    if (path.startsWith('assets/')) {
+      return Image.asset(
+        path,
+        fit: fit,
+        errorBuilder: (context, error, stackTrace) => fallback,
+      );
+    }
+    return Image.network(
+      path,
+      fit: fit,
+      errorBuilder: (context, error, stackTrace) => fallback,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final quantity = viewModel.cartQuantities[product.id] ?? 0;
@@ -44,19 +60,14 @@ class ProductCardWidget extends StatelessWidget {
               children: [
                 ClipRRect(
                   borderRadius: const BorderRadius.vertical(top: Radius.circular(16)),
-                  child: _isTest
-                      ? Container(
-                          color: AppColors.surfaceVariant,
-                          child: const Icon(Icons.shopping_bag_outlined, color: AppColors.textMuted, size: 36),
-                        )
-                      : Image.network(
-                          product.imageUrl,
-                          fit: BoxFit.cover,
-                          errorBuilder: (context, error, stackTrace) => Container(
-                            color: AppColors.surfaceVariant,
-                            child: const Icon(Icons.shopping_bag_outlined, color: AppColors.textMuted, size: 36),
-                          ),
-                        ),
+                  child: _buildImage(
+                    product.imageUrl,
+                    fit: BoxFit.cover,
+                    fallback: Container(
+                      color: AppColors.surfaceVariant,
+                      child: const Icon(Icons.shopping_bag_outlined, color: AppColors.textMuted, size: 36),
+                    ),
+                  ),
                 ),
                 if (product.hasDiscount)
                   Positioned(

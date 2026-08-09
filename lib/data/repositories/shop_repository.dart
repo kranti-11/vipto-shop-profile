@@ -2,7 +2,7 @@ import 'package:vipto_shop_profile/data/models/product_model.dart';
 import 'package:vipto_shop_profile/data/models/review_model.dart';
 import 'package:vipto_shop_profile/data/models/shop_model.dart';
 
-/// Repository supplying authentic Indian Kirana Store details and dedicated product pictures
+/// Repository supplying authentic Indian Kirana Store details and local image assets
 class ShopRepository {
   Future<ShopModel> fetchShopDetails(String shopId, {bool delay = true}) async {
     if (delay) {
@@ -21,10 +21,8 @@ class ShopRepository {
           'A medium-sized neighborhood kirana store offering daily essentials — rice, wheat flour, moong dal, cooking oil, spices, packaged snacks, fresh milk, and farm vegetables — priced fairly for the local community.',
       contactNumber: '+91 98201 45892',
       email: 'contact@sriganeshkirana.in',
-      profileImageUrl:
-          'https://images.unsplash.com/photo-1604719312566-8912e9227c6a?auto=format&fit=crop&w=1200&q=80',
-      logoImageUrl:
-          'https://images.unsplash.com/photo-1578916171728-46686eac8d58?auto=format&fit=crop&w=400&q=80',
+      profileImageUrl: 'assets/images/store_banner.jpg',
+      logoImageUrl: 'assets/images/store_logo.jpg',
       isOpen: true,
       openingHours: '8:00 AM – 9:30 PM',
       isVerified: true,
@@ -36,8 +34,7 @@ class ShopRepository {
           price: 65.0,
           originalPrice: 75.0,
           unit: '500g pack',
-          imageUrl:
-              'https://images.unsplash.com/photo-1585994191611-72ec0153e40a?auto=format&fit=crop&w=600&q=80',
+          imageUrl: 'assets/images/moong_dal.jpg',
           rating: 4.9,
           stockCount: 30,
           description: '100% natural split yellow moong dal, clean and unpolished.',
@@ -50,8 +47,7 @@ class ShopRepository {
           price: 245.0,
           originalPrice: 270.0,
           unit: '5 kg pack',
-          imageUrl:
-              'https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=600&q=80',
+          imageUrl: 'assets/images/atta.jpg',
           rating: 4.9,
           stockCount: 25,
           description: '100% pure whole wheat flour with 0% maida for soft rotis.',
@@ -64,8 +60,7 @@ class ShopRepository {
           price: 165.0,
           originalPrice: 180.0,
           unit: '1 Liter pouch',
-          imageUrl:
-              'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=600&q=80',
+          imageUrl: 'assets/images/oil.jpg',
           rating: 4.8,
           stockCount: 30,
           description: 'Light and healthy cooking oil enriched with Vitamins A & D.',
@@ -77,8 +72,7 @@ class ShopRepository {
           category: 'Dairy',
           price: 28.0,
           unit: '500 ml pouch',
-          imageUrl:
-              'https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=600&q=80',
+          imageUrl: 'assets/images/milk.jpg',
           rating: 5.0,
           stockCount: 40,
           description: 'Fresh pasteurized toned milk delivered daily every morning.',
@@ -90,8 +84,7 @@ class ShopRepository {
           category: 'Spices & Salt',
           price: 28.0,
           unit: '1 kg pack',
-          imageUrl:
-              'https://images.unsplash.com/photo-1518110168401-f2877ee2c085?auto=format&fit=crop&w=600&q=80',
+          imageUrl: 'assets/images/salt.jpg',
           rating: 4.9,
           stockCount: 50,
           description: 'Iodized salt ensuring health and purity in every meal.',
@@ -103,8 +96,7 @@ class ShopRepository {
           category: 'Vegetables',
           price: 35.0,
           unit: '1 kg',
-          imageUrl:
-              'https://images.unsplash.com/photo-1592924357228-91a4daadcfea?auto=format&fit=crop&w=600&q=80',
+          imageUrl: 'assets/images/tomatoes.jpg',
           rating: 4.7,
           stockCount: 15,
           description: 'Freshly harvested ripe red tomatoes from nearby local farms.',
