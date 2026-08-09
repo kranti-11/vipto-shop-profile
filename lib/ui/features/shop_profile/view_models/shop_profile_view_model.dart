@@ -35,7 +35,10 @@ class ShopProfileViewModel extends ChangeNotifier {
     'Oils & Ghee',
     'Dairy',
     'Pulses & Dals',
-    'Vegetables'
+    'Vegetables',
+    'Snacks & Chocolates',
+    'Personal Care',
+    'Household & Cleaning',
   ];
 
   Future<void> loadShopProfile(String shopId, {bool delay = true}) async {

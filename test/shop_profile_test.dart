@@ -62,7 +62,7 @@ void main() {
       expect(viewModel.filteredProducts.first.name, contains('Moong'));
 
       viewModel.setSearchQuery('');
-      expect(viewModel.filteredProducts.length, equals(6));
+      expect(viewModel.filteredProducts.length, equals(10));
     });
   });
 
